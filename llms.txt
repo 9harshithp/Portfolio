@@ -1,0 +1,42 @@
+# Harshith P — Engineering Portfolio
+
+> Backend Engineer at GammaStack and Full Stack Software Engineer based in Mysuru, India. Builds production backend APIs, full-stack web applications, and PixiJS browser games.
+
+- Portfolio: https://portfolio-bay-three-10.vercel.app/
+- GitHub: https://github.com/9harshithp
+- LinkedIn: https://www.linkedin.com/in/harshithp914
+- Email: harshithp914@gmail.com
+- Location: Mysuru, Karnataka, India
+
+## Experience
+
+- **Backend Engineer, GammaStack** (Jul 2026 – Present): Works on services behind player accounts, admin tools, and operator integrations connecting game engines and operators using Node.js and backend APIs.
+- **Java Full Stack Developer Intern, Dhee Coding Labs, Bengaluru** (Jan – Jul 2026): Built Spring Boot endpoints, connected React screens, and tested applications against MySQL.
+- **Cloud Computing Intern, INTERNZ, Remote** (Apr – Jul 2025): Configured AWS (EC2, S3, Lambda) and GCP cloud resources.
+
+## Education
+
+- **B.E. Computer Science Engineering** — Vidya Vikas Institute of Engineering and Technology, Mysuru (2022 – 2026), CGPA 8.2
+- **Pre-University (PCMB)** — Expert PU College, Mangaluru (2019 – 2021), 93%
+
+## Technical Skills
+
+- **Languages:** Java, TypeScript, JavaScript, Python, SQL
+- **Frameworks & Libraries:** Spring Boot, Node.js, Express, React, Next.js, FastAPI, PixiJS
+- **Databases & Hosting:** MySQL, PostgreSQL, TiDB, AWS, GCP, Docker, Vercel, Render
+- **Testing & Tools:** Git, GitHub Actions, Playwright, JUnit, Vitest, Sentry, Gemini API, Tesseract OCR
+
+## Projects
+
+### Software & Full-Stack Applications
+1. **SocietyCook** — Neighbours in the same apartment tower can book a cook together, split the cost, and schedule dishwashing after the meal. (React, Node.js, MySQL, TiDB) · Live: https://societycook.vercel.app · Repo: https://github.com/9harshithp/SocietyCook
+2. **DearHand** — Families in Mysuru can book someone to accompany a parent to a hospital visit or pick up a prescription. (Java, Spring Boot, React, Razorpay) · Repo: https://github.com/9harshithp/DearHand
+3. **BugLens v2.0** — Scores a bug report out of 100 and shows which details a developer still needs to reproduce it. (TypeScript, Express, PostgreSQL, Anthropic) · Live: https://buglens-2be.pages.dev/ · Repo: https://github.com/9harshithp/BugLens-Defect-Quality-Checker
+4. **Pharmasure** — Pharmacy prototype that reads prescription text, tracks medicine batches, and flags stock approaching expiry. (React, Spring Boot, Gemini, MySQL) · Live: https://pharmasure.vercel.app/ · Repo: https://github.com/9harshithp/Pharmasure
+5. **Talent Tuition Center** — Next.js preview for a Bengaluru tuition centre with separate student, teacher, and admin screens. (Next.js, TypeScript, Tailwind, Gemini) · Live: https://talent-tuition-center.vercel.app/ · Repo: https://github.com/9harshithp/talent-tuition-center
+6. **Desiri Naturals** — Grocery storefront where shoppers check delivery by pincode, order farm produce, and download an invoice. (React 19, Express 5, Drizzle, PostgreSQL) · Live: https://desiri-naturals-km63.vercel.app/ · Repo: https://github.com/9harshithp/Desiri-Naturals
+
+### Game Development (PixiJS)
+7. **Paperly** — Steer a paper plane through mountain valleys, boost through rings, and build a flight log across 15 chapters. (PixiJS, Flight controls, Chapter progression) · Repo: https://github.com/9harshithp/Paperly
+8. **Ridgeline Rally** — Drive a stunt quad over rolling terrain, collect coins, and manage fuel while chasing your best distance. (PixiJS, Vehicle controls, 2D terrain) · Repo: https://github.com/9harshithp/ridgeline-rally
+

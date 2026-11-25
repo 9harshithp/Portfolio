@@ -12,11 +12,21 @@ let mouseX = 0;
 let mouseY = 0;
 let easedX = 0;
 let easedY = 0;
+let ink = '#6c78ff';
+let isLight = document.documentElement.dataset.theme === 'light';
+
+function syncThemeCache() {
+  isLight = document.documentElement.dataset.theme === 'light';
+  const val = getComputedStyle(document.documentElement).getPropertyValue('--accent2').trim();
+  if (val) ink = val;
+}
+syncThemeCache();
+window.addEventListener('themechange', syncThemeCache);
 
 // Project a gently folding lattice into the hero. Only visible tiles near the
 // moving crest are illuminated, so the text keeps a quiet reading area.
 function paintField(time) {
-  if (!context) return;
+  if (!context || !width || !height) return;
   const t = reduceMotion.matches ? 1.4 : time / 1900;
   easedX += (mouseX - easedX) * 0.045;
   easedY += (mouseY - easedY) * 0.045;
@@ -24,26 +34,25 @@ function paintField(time) {
   const tile = width < 700 ? 18 : Math.min(36, width / 39);
   const horizon = height * (width < 700 ? 0.46 : 0.32);
   const origin = width * 0.55;
-  const light = document.documentElement.dataset.theme === 'light';
-  const ink = getComputedStyle(document.documentElement).getPropertyValue('--accent2').trim();
+  const range = width < 700 ? 10 : 14;
   function point(i, j) {
     const wave = Math.sin(i * 0.32 + t) * Math.cos(j * 0.27 - t * 0.55);
     return [origin + (i - j) * tile + easedX * 19,
       horizon + (i + j) * tile * 0.43 - wave * tile * 1.5 + easedY * 13];
   }
-  for (let j = -14; j <= 14; j++) {
-    for (let i = -14; i <= 14; i++) {
+  context.strokeStyle = ink;
+  context.fillStyle = ink;
+  for (let j = -range; j <= range; j++) {
+    for (let i = -range; i <= range; i++) {
       const crest = Math.exp(-((i - 4 * Math.sin(t * .35)) ** 2 / 60 + (j + 3 * Math.cos(t * .3)) ** 2 / 32));
       const alpha = crest * (0.34 + 0.22 * Math.sin(i * .5 + j * .4 - t));
-      if (alpha < .012) continue;
+      if (alpha < .02) continue;
       const corners = [point(i,j), point(i+1,j), point(i+1,j+1), point(i,j+1)];
       context.beginPath();
       corners.forEach(([x,y], index) => index ? context.lineTo(x,y) : context.moveTo(x,y));
       context.closePath();
-      context.strokeStyle = ink;
-      context.globalAlpha = alpha * (light ? .85 : 1);
+      context.globalAlpha = alpha * (isLight ? .85 : 1);
       context.stroke();
-      context.fillStyle = ink;
       context.globalAlpha = alpha * .14;
       context.fill();
       if ((i * 3 + j) % 9 === 0 && crest > .35) {
@@ -98,7 +107,7 @@ const card = document.querySelector('#spotlight');
 const deckIndex = step => (spotlight + step + projects.length) % projects.length;
 
 function face(project) {
-  return '<div class="deck-image"><img draggable="false" alt="" src="assets/'+project.image+'.webp"></div><div class="deck-content"><small>'+project.type+'</small><h3>'+project.name+'</h3><p>'+project.desc+'</p><button>Explore project</button></div>';
+  return '<div class="deck-image"><img draggable="false" alt="'+project.name+' project preview" src="assets/'+project.image+'-600.webp" srcset="assets/'+project.image+'-600.webp 600w, assets/'+project.image+'.webp '+project.w+'w" sizes="(max-width: 700px) 90vw, 420px" width="600" height="'+project.h600+'"></div><div class="deck-content"><small>'+project.type+'</small><h2>'+project.name+'</h2><p>'+project.desc+'</p><button type="button">Explore project</button></div>';
 }
 
 function showSpotlight() {
