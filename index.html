@@ -1,56 +1,475 @@
-<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Harshith P is a backend engineer at GammaStack in Mysuru, India. His work includes booking systems, bug-report analysis and browser games built with PixiJS."><meta name="theme-color" content="#0c1418"><title>Harshith P | Backend Engineer at GammaStack</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script><link rel="stylesheet" href="studio.css"><script defer src="studio.js"></script><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Harshith P",
-    "jobTitle": "Backend Engineer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "GammaStack"
-    },
-    "homeLocation": {
-      "@type": "Place",
-      "name": "Mysuru, India"
-    },
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Vidya Vikas Institute of Engineering and Technology"
-    },
-    "sameAs": [
-      "https://github.com/9harshithp",
-      "https://www.linkedin.com/in/harshithp914"
-    ],
-    "knowsAbout": [
-      "Backend engineering",
-      "Node.js",
-      "Java",
-      "PixiJS"
-    ]
-  }
-}</script></head><body>
-<div class="progress" id="progress"></div><header class="nav"><a class="mark" href="#home" aria-label="Home">hp.</a><nav id="navlinks"><a href="#home" class="active">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a></nav><div class="controls"><button id="theme" aria-label="Toggle color theme" title="Toggle theme">◐</button><button id="palette" aria-label="Change accent color" title="Change accent">◉</button><a class="pill" href="#contact">Let's talk</a><button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button></div></header>
-<main>
-<section class="hero wrap" id="home"><canvas id="weave" aria-hidden="true"></canvas><div class="hero-copy"><p class="terminal"><span>›</span> <span id="typed">Hello, I’m</span><span class="caret">|</span></p><h1>Harshith <em>P.</em></h1><div class="role">Backend engineer<span> &amp; full-stack developer.</span></div><p class="intro">At GammaStack, I work on the APIs that connect game engines and operators. Outside work, I build browser games and apps like SocietyCook.</p><div class="hero-actions"><a class="primary" href="#projects">Explore my work</a><a class="outline" href="https://drive.google.com/file/d/1hlRhN3m-_-B5aFewD04J-yaEA1tCPfSd/view?usp=sharing" target="_blank" rel="noopener">View résumé</a></div><div class="socials"><a href="https://github.com/9harshithp" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/harshithp914" target="_blank" rel="noopener">LinkedIn</a><span>Mysuru, India</span></div></div>
-<aside class="hero-art"><div class="deck"><div class="deck-card" id="spotlight"></div></div><div class="deck-bar"><small>PROJECT SPOTLIGHT</small><span aria-live="polite" id="spot-index">1 / 8</span><button id="spot-prev" aria-label="Previous spotlight">‹</button><button id="spot-next" aria-label="Next spotlight">›</button></div></aside><div class="hero-foot"><span><i></i> BACKEND ENGINEER AT GAMMASTACK</span><a href="#about">Scroll to explore <b>↓</b></a></div></section>
-<section class="wrap section" id="about"><h2>About <em>me.</em></h2><div class="about-grid"><figure class="profile-photo"><img src="assets/harshith.webp" alt="Harshith P"><figcaption>Harshith P · Mysuru</figcaption></figure><p class="large">I'm from Mysuru and studied Computer Science Engineering at Vidya Vikas Institute of Engineering and Technology. I worked with Java and Spring Boot during my internship at Dhee Coding Labs. These days I spend most of my time in Node.js.</p><div class="facts"><div><strong>8.2</strong><span>B.E. CGPA</span></div><div><strong>8</strong><span>Featured projects</span></div><div><strong>2</strong><span>Internships</span></div></div></div></section>
-<section class="wrap section" id="experience"><h2>Experience<em>.</em></h2><div class="journey-controls"><button id="exp-prev" aria-label="Previous role">‹</button><span id="exp-count" aria-live="polite"></span><button id="exp-next" aria-label="Next role">›</button></div><div class="timeline">
-<article><div class="date">JUL 2026 — PRESENT</div><div><h3>GammaStack</h3><h4>Backend Engineer</h4><p>I work on the services behind player accounts, admin tools and operator integrations. When a game request fails, I trace it through the API, database and configuration with the team.</p><div class="tags"><span>Node.js</span><span>Backend APIs</span><span>Debugging</span></div></div></article>
-<article><div class="date">JAN — JUL 2026</div><div><h3>Dhee Coding Labs</h3><h4>Java Full Stack Developer Intern · Bengaluru</h4><p>I wrote Spring Boot endpoints, connected them to React screens and tested the applications against MySQL.</p><div class="tags"><span>Java</span><span>Spring Boot</span><span>React</span></div></div></article>
-<article><div class="date">APR — JUL 2025</div><div><h3>INTERNZ</h3><h4>Cloud Computing Intern · Remote</h4><p>I configured resources on AWS and GCP. On AWS, I worked with EC2 instances, S3 storage and Lambda functions.</p><div class="tags"><span>AWS</span><span>GCP</span><span>Cloud</span></div></div></article></div></section>
-<section class="wrap section" id="projects"><div class="section-head"><h2>Selected <em>work.</em></h2><div class="carousel-controls"><button id="prev" aria-label="Previous project">‹</button><span id="count">01 / 08</span><button id="next" aria-label="Next project">›</button></div></div><div class="filters" aria-label="Project filter"><button class="selected" data-filter="All">All</button><button data-filter="Full-stack">Full-stack</button><button data-filter="AI">AI</button><button data-filter="Java">Java</button><button data-filter="Games">Games</button></div><div id="project-stage"></div><div id="project-grid" class="project-grid"></div><details class="sources"><summary>All project repositories</summary><ul class="project-directory">
-<li data-project="societycook"><a href="https://github.com/9harshithp/SocietyCook">SocietyCook</a><p>Neighbours in the same apartment tower can book a cook together, split the cost and schedule dishwashing after the meal.</p></li>
-<li data-project="dearhand"><a href="https://github.com/9harshithp/DearHand">DearHand</a><p>Families in Mysuru can book someone to accompany a parent to a hospital visit or pick up a prescription.</p></li>
-<li data-project="buglens"><a href="https://github.com/9harshithp/BugLens-Defect-Quality-Checker">BugLens v2.0</a><p>BugLens scores a bug report out of 100 and shows which details a developer still needs to reproduce it.</p></li>
-<li data-project="pharmasure"><a href="https://github.com/9harshithp/Pharmasure">Pharmasure</a><p>A pharmacy prototype that reads prescription text, tracks medicine batches and flags stock approaching expiry.</p></li>
-<li data-project="talent"><a href="https://github.com/9harshithp/talent-tuition-center">Talent Tuition Center</a><p>A Next.js preview for a Bengaluru tuition centre with separate student, teacher and admin screens.</p></li>
-<li data-project="desiri"><a href="https://github.com/9harshithp/Desiri-Naturals">Desiri Naturals</a><p>A grocery storefront where shoppers check delivery by pincode, order farm produce and download an invoice.</p></li>
-<li data-project="paperly"><a href="https://github.com/9harshithp/Paperly">Paperly</a><p>Steer a paper plane through mountain valleys, boost through rings and build a flight log across 15 chapters.</p></li>
-<li data-project="ridgeline"><a href="https://github.com/9harshithp/ridgeline-rally">Ridgeline Rally</a><p>Drive a stunt quad over rolling terrain, collect coins and manage fuel as you chase your best distance.</p></li>
-</ul></details></section>
-<section class="wrap section" id="skills"><h2>Technical <em>skills.</em></h2><div class="skill-grid"><article><h3>Languages</h3><div class="tags"><span>Java</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>SQL</span></div></article><article><h3>Frameworks &amp; libraries</h3><div class="tags"><span>Spring Boot</span><span>Node.js</span><span>Express</span><span>React</span><span>Next.js</span><span>FastAPI</span><span>PixiJS</span></div></article><article><h3>Databases &amp; hosting</h3><div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>TiDB</span><span>AWS</span><span>GCP</span><span>Docker</span><span>Vercel</span><span>Render</span></div></article><article><h3>Testing &amp; tools</h3><div class="tags"><span>Git</span><span>GitHub Actions</span><span>Playwright</span><span>JUnit</span><span>Vitest</span><span>Sentry</span><span>Gemini API</span><span>Tesseract OCR</span></div></article></div></section>
-<section class="wrap section" id="education"><h2>Education &amp; <em>recognition.</em></h2><div class="education"><article><small>2022 — 2026 · MYSURU</small><h3>B.E. Computer Science Engineering</h3><p>Vidya Vikas Institute of Engineering and Technology</p><span class="tag">CGPA: 8.2</span></article><article><small>2019 — 2021 · MANGALURU</small><h3>Pre-University (PCMB)</h3><p>Expert PU College</p><span class="tag">93%</span></article></div><div class="achievements"><span>Google Solution Challenge 2025 — FemCare</span><span>GDG Gen AI Study Jam</span><span>IBM SkillsBuild — Web Development Fundamentals</span><span>Mechathon Top 5 — SAE-DTU</span></div></section>
-<section class="wrap section contact" id="contact"><h2>Get in <em>touch.</em></h2><div class="contact-links"><a class="primary" href="mailto:harshithp914@gmail.com">Send an email</a><button class="outline" id="copy">Copy email</button><a class="outline" href="https://www.linkedin.com/in/harshithp914" target="_blank" rel="noopener">LinkedIn</a></div><p id="email-status" aria-live="polite">harshithp914@gmail.com</p><form id="note"><h3>Write to Harshith</h3><label>Your name<input name="sender" required autocomplete="name"></label><label>Message<textarea name="message" rows="3" required></textarea></label><button class="primary">Open email draft</button></form></section>
-</main><footer class="wrap"><span>© 2026 Harshith P</span><a href="#home">Back to top</a></footer>
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harshith P — Backend Engineer at GammaStack | Full Stack &amp; Game Developer</title>
+<meta name="description" content="Harshith P is a Backend Engineer at GammaStack and Full Stack Software Engineer in Mysuru, India, building production APIs, web apps, and PixiJS browser games.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Harshith P">
+<meta name="theme-color" content="#090c13">
+<link rel="canonical" href="https://portfolio-bay-three-10.vercel.app/">
+<!-- Google Search Console: uncomment and replace YOUR_VERIFICATION_TOKEN with the token from Search Console -->
+<!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_TOKEN"> -->
 
-<dialog id="case"><button class="close" aria-label="Close case study">×</button><div id="case-content"></div></dialog></body></html>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portfolio-bay-three-10.vercel.app/">
+<meta property="og:site_name" content="Harshith P — Engineering Portfolio">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="Harshith P — Backend Engineer at GammaStack | Full Stack &amp; Game Developer">
+<meta property="og:description" content="Backend Engineer at GammaStack and Full Stack Software Engineer in Mysuru, India. Building production APIs, web applications, and PixiJS browser games.">
+<meta property="og:image" content="https://portfolio-bay-three-10.vercel.app/assets/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Harshith P — Backend Engineer at GammaStack, Full Stack and Game Developer in Mysuru, India">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Harshith P — Backend Engineer at GammaStack | Full Stack &amp; Game Developer">
+<meta name="twitter:description" content="Backend Engineer at GammaStack and Full Stack Software Engineer in Mysuru, India. Building production APIs, web applications, and PixiJS browser games.">
+<meta name="twitter:image" content="https://portfolio-bay-three-10.vercel.app/assets/og-preview.png">
+<meta name="twitter:image:alt" content="Harshith P — Backend Engineer at GammaStack, Full Stack and Game Developer in Mysuru, India">
+
+<link rel="preload" as="image" href="assets/societycook-600.webp" fetchpriority="high" type="image/webp">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="studio.css">
+<script defer src="app.js"></script>
+<script defer src="studio.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://portfolio-bay-three-10.vercel.app/#website",
+      "url": "https://portfolio-bay-three-10.vercel.app/",
+      "name": "Harshith P — Engineering Portfolio",
+      "description": "Engineering portfolio of Harshith P, Backend Engineer at GammaStack and Full Stack & Game Developer in Mysuru, India.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://portfolio-bay-three-10.vercel.app/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://portfolio-bay-three-10.vercel.app/#profilepage",
+      "url": "https://portfolio-bay-three-10.vercel.app/",
+      "name": "Harshith P — Backend Engineer at GammaStack | Full Stack & Game Developer",
+      "isPartOf": {
+        "@id": "https://portfolio-bay-three-10.vercel.app/#website"
+      },
+      "mainEntity": {
+        "@id": "https://portfolio-bay-three-10.vercel.app/#person"
+      },
+      "about": {
+        "@id": "https://portfolio-bay-three-10.vercel.app/#person"
+      },
+      "hasPart": {
+        "@id": "https://portfolio-bay-three-10.vercel.app/#projects-list"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://portfolio-bay-three-10.vercel.app/#person",
+      "name": "Harshith P",
+      "url": "https://portfolio-bay-three-10.vercel.app/",
+      "image": "https://portfolio-bay-three-10.vercel.app/assets/harshith.webp",
+      "email": "mailto:harshithp914@gmail.com",
+      "jobTitle": "Backend Engineer",
+      "description": "Backend Engineer at GammaStack and Full Stack Software Engineer in Mysuru, India, building production APIs, full-stack web applications, and PixiJS browser games.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "GammaStack"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Mysuru, India",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mysuru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        }
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Vidya Vikas Institute of Engineering and Technology"
+      },
+      "sameAs": [
+        "https://github.com/9harshithp",
+        "https://www.linkedin.com/in/harshithp914"
+      ],
+      "knowsAbout": [
+        "Backend Engineering",
+        "Full Stack Development",
+        "Software Engineering",
+        "Game Development",
+        "Node.js",
+        "Java",
+        "Spring Boot",
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "SQL",
+        "Express",
+        "React",
+        "Next.js",
+        "FastAPI",
+        "PixiJS",
+        "MySQL",
+        "PostgreSQL",
+        "TiDB",
+        "AWS",
+        "GCP",
+        "Docker",
+        "Playwright",
+        "JUnit",
+        "Vitest",
+        "Gemini API"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://portfolio-bay-three-10.vercel.app/#projects-list",
+      "name": "Selected Software Engineering and Game Development Projects by Harshith P",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "SocietyCook",
+            "description": "Neighbours in the same apartment tower can book a cook together, split the cost and schedule dishwashing after the meal.",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Web",
+            "url": "https://societycook.vercel.app",
+            "codeRepository": "https://github.com/9harshithp/SocietyCook",
+            "programmingLanguage": ["JavaScript", "React", "Node.js", "SQL"],
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "DearHand",
+            "description": "Families in Mysuru can book someone to accompany a parent to a hospital visit or pick up a prescription.",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web",
+            "codeRepository": "https://github.com/9harshithp/DearHand",
+            "programmingLanguage": ["Java", "Spring Boot", "React"],
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "BugLens v2.0",
+            "description": "BugLens scores a bug report out of 100 and shows which details a developer still needs to reproduce it.",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "url": "https://buglens-2be.pages.dev/",
+            "codeRepository": "https://github.com/9harshithp/BugLens-Defect-Quality-Checker",
+            "programmingLanguage": ["TypeScript", "Express", "PostgreSQL"],
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Pharmasure",
+            "description": "A pharmacy prototype that reads prescription text, tracks medicine batches and flags stock approaching expiry.",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web",
+            "url": "https://pharmasure.vercel.app/",
+            "codeRepository": "https://github.com/9harshithp/Pharmasure",
+            "programmingLanguage": ["Java", "Spring Boot", "React", "MySQL"],
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Talent Tuition Center",
+            "description": "A Next.js preview for a Bengaluru tuition centre with separate student, teacher and admin screens.",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web",
+            "url": "https://talent-tuition-center.vercel.app/",
+            "codeRepository": "https://github.com/9harshithp/talent-tuition-center",
+            "programmingLanguage": ["TypeScript", "Next.js"],
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Desiri Naturals",
+            "description": "A grocery storefront where shoppers check delivery by pincode, order farm produce and download an invoice.",
+            "applicationCategory": "ShoppingApplication",
+            "operatingSystem": "Web",
+            "url": "https://desiri-naturals-km63.vercel.app/",
+            "codeRepository": "https://github.com/9harshithp/Desiri-Naturals",
+            "programmingLanguage": ["TypeScript", "React", "Express", "PostgreSQL"],
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Paperly",
+            "description": "Steer a paper plane through mountain valleys, boost through rings and build a flight log across 15 chapters.",
+            "genre": "Flight",
+            "gamePlatform": "Web Browser",
+            "applicationCategory": "Game",
+            "playMode": "SinglePlayer",
+            "codeRepository": "https://github.com/9harshithp/Paperly",
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "VideoGame",
+            "name": "Ridgeline Rally",
+            "description": "Drive a stunt quad over rolling terrain, collect coins and manage fuel as you chase your best distance.",
+            "genre": "Racing",
+            "gamePlatform": "Web Browser",
+            "applicationCategory": "Game",
+            "playMode": "SinglePlayer",
+            "codeRepository": "https://github.com/9harshithp/ridgeline-rally",
+            "author": { "@id": "https://portfolio-bay-three-10.vercel.app/#person" }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="nav">
+  <a class="mark" href="#home" aria-label="hp. — Home">hp.</a>
+  <nav id="navlinks" aria-label="Primary">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+  </nav>
+  <div class="controls">
+    <button type="button" id="theme" aria-label="Toggle color theme" title="Toggle theme">◐</button>
+    <button type="button" id="palette" aria-label="Change accent color" title="Change accent">◉</button>
+    <a class="pill" href="#contact">Let's talk</a>
+    <button type="button" class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+<main>
+<section class="hero wrap" id="home">
+  <canvas id="weave" aria-hidden="true"></canvas>
+  <div class="hero-copy">
+    <p class="terminal"><span>›</span> <span id="typed">Hello, I’m</span><span class="caret">|</span></p>
+    <h1>Harshith <em>P.</em></h1>
+    <div class="role">Backend engineer<span> &amp; full-stack developer.</span></div>
+    <p class="intro">At GammaStack, I work on the APIs that connect game engines and operators. Outside work, I build browser games and apps like SocietyCook.</p>
+    <div class="hero-actions">
+      <a class="primary" href="#projects">Explore my work</a>
+      <a class="outline" href="https://drive.google.com/file/d/1hlRhN3m-_-B5aFewD04J-yaEA1tCPfSd/view?usp=sharing" target="_blank" rel="noopener noreferrer">View résumé</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/9harshithp" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/harshithp914" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span>Mysuru, India</span>
+    </div>
+  </div>
+  <aside class="hero-art" aria-label="Featured project spotlight">
+    <div class="deck">
+      <div class="deck-card" id="spotlight">
+        <div class="deck-image"><img draggable="false" alt="SocietyCook apartment meal-booking application preview" src="assets/societycook-600.webp" srcset="assets/societycook-600.webp 600w, assets/societycook.webp 1450w" sizes="(max-width: 700px) 90vw, 420px" width="600" height="360" fetchpriority="high"></div>
+        <div class="deck-content"><small>HOUSEHOLD SERVICES · FULL-STACK</small><h2>SocietyCook</h2><p>Neighbours in the same apartment tower can book a cook together, split the cost and schedule dishwashing after the meal.</p><button type="button">Explore project</button></div>
+      </div>
+    </div>
+    <div class="deck-bar">
+      <small>PROJECT SPOTLIGHT</small>
+      <span aria-live="polite" id="spot-index">1 / 8</span>
+      <button type="button" id="spot-prev" aria-label="Previous spotlight">‹</button>
+      <button type="button" id="spot-next" aria-label="Next spotlight">›</button>
+    </div>
+  </aside>
+  <div class="hero-foot">
+    <span><i></i> BACKEND ENGINEER AT GAMMASTACK</span>
+    <a href="#about">Scroll to explore <b>↓</b></a>
+  </div>
+</section>
+
+<section class="wrap section" id="about">
+  <h2>About <em>me.</em></h2>
+  <div class="about-grid">
+    <figure class="profile-photo">
+      <img src="assets/harshith.webp" alt="Portrait of Harshith P, Backend Engineer at GammaStack in Mysuru, India" width="398" height="512" loading="lazy">
+      <figcaption>Harshith P · Mysuru</figcaption>
+    </figure>
+    <p class="large">I'm from Mysuru and studied Computer Science Engineering at Vidya Vikas Institute of Engineering and Technology. I worked with Java and Spring Boot during my internship at Dhee Coding Labs, and now spend most of my time in Node.js building backend APIs at GammaStack alongside full-stack web apps and PixiJS browser games.</p>
+    <div class="facts">
+      <div><strong>8.2</strong><span>B.E. CGPA</span></div>
+      <div><strong>8</strong><span>Featured projects</span></div>
+      <div><strong>2</strong><span>Internships</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="experience">
+  <h2>Experience<em>.</em></h2>
+  <div class="journey-controls">
+    <button type="button" id="exp-prev" aria-label="Previous role">‹</button>
+    <span id="exp-count" aria-live="polite"></span>
+    <button type="button" id="exp-next" aria-label="Next role">›</button>
+  </div>
+  <div class="timeline">
+    <article>
+      <div class="date">JUL 2026 — PRESENT</div>
+      <div>
+        <h3>GammaStack</h3>
+        <h4>Backend Engineer</h4>
+        <p>I work on the services behind player accounts, admin tools and operator integrations. When a game request fails, I trace it through the API, database and configuration with the team.</p>
+        <div class="tags"><span>Node.js</span><span>Backend APIs</span><span>Debugging</span></div>
+      </div>
+    </article>
+    <article>
+      <div class="date">JAN — JUL 2026</div>
+      <div>
+        <h3>Dhee Coding Labs</h3>
+        <h4>Java Full Stack Developer Intern · Bengaluru</h4>
+        <p>I wrote Spring Boot endpoints, connected them to React screens and tested the applications against MySQL.</p>
+        <div class="tags"><span>Java</span><span>Spring Boot</span><span>React</span></div>
+      </div>
+    </article>
+    <article>
+      <div class="date">APR — JUL 2025</div>
+      <div>
+        <h3>INTERNZ</h3>
+        <h4>Cloud Computing Intern · Remote</h4>
+        <p>I configured resources on AWS and GCP. On AWS, I worked with EC2 instances, S3 storage and Lambda functions.</p>
+        <div class="tags"><span>AWS</span><span>GCP</span><span>Cloud</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap section" id="projects">
+  <div class="section-head">
+    <h2>Selected <em>work.</em></h2>
+    <div class="carousel-controls">
+      <button type="button" id="prev" aria-label="Previous project">‹</button>
+      <span id="count">01 / 08</span>
+      <button type="button" id="next" aria-label="Next project">›</button>
+    </div>
+  </div>
+  <div class="filters" aria-label="Project filter">
+    <button type="button" class="selected" data-filter="All">All</button>
+    <button type="button" data-filter="Full-stack">Full-stack</button>
+    <button type="button" data-filter="AI">AI</button>
+    <button type="button" data-filter="Java">Java</button>
+    <button type="button" data-filter="Games">Games</button>
+  </div>
+  <div id="project-stage">
+    <article class="stage">
+      <div class="stage-visual"><img loading="lazy" src="assets/societycook.webp" srcset="assets/societycook-600.webp 600w, assets/societycook.webp 1450w" sizes="(max-width: 900px) 90vw, 650px" width="1450" height="869" alt="SocietyCook web application screenshot"></div>
+      <div class="stage-text">
+        <small>HOUSEHOLD SERVICES · FULL-STACK</small>
+        <h3>SocietyCook</h3>
+        <p>Neighbours in the same apartment tower can book a cook together, split the cost and schedule dishwashing after the meal.</p>
+        <div class="tags"><span>React</span><span>Node.js</span><span>MySQL</span><span>TiDB</span></div>
+        <div class="stage-links">
+          <a href="https://societycook.vercel.app" target="_blank" rel="noopener noreferrer">Visit site</a>
+          <a href="https://github.com/9harshithp/SocietyCook" target="_blank" rel="noopener noreferrer">Source code</a>
+          <button type="button" id="details">Case study</button>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div id="project-grid" class="project-grid"></div>
+  <details class="sources">
+    <summary>All project repositories</summary>
+    <ul class="project-directory">
+      <li data-project="societycook"><a href="https://github.com/9harshithp/SocietyCook" target="_blank" rel="noopener noreferrer">SocietyCook</a><p>Neighbours in the same apartment tower can book a cook together, split the cost and schedule dishwashing after the meal.</p></li>
+      <li data-project="dearhand"><a href="https://github.com/9harshithp/DearHand" target="_blank" rel="noopener noreferrer">DearHand</a><p>Families in Mysuru can book someone to accompany a parent to a hospital visit or pick up a prescription.</p></li>
+      <li data-project="buglens"><a href="https://github.com/9harshithp/BugLens-Defect-Quality-Checker" target="_blank" rel="noopener noreferrer">BugLens v2.0</a><p>BugLens scores a bug report out of 100 and shows which details a developer still needs to reproduce it.</p></li>
+      <li data-project="pharmasure"><a href="https://github.com/9harshithp/Pharmasure" target="_blank" rel="noopener noreferrer">Pharmasure</a><p>A pharmacy prototype that reads prescription text, tracks medicine batches and flags stock approaching expiry.</p></li>
+      <li data-project="talent"><a href="https://github.com/9harshithp/talent-tuition-center" target="_blank" rel="noopener noreferrer">Talent Tuition Center</a><p>A Next.js preview for a Bengaluru tuition centre with separate student, teacher and admin screens.</p></li>
+      <li data-project="desiri"><a href="https://github.com/9harshithp/Desiri-Naturals" target="_blank" rel="noopener noreferrer">Desiri Naturals</a><p>A grocery storefront where shoppers check delivery by pincode, order farm produce and download an invoice.</p></li>
+      <li data-project="paperly"><a href="https://github.com/9harshithp/Paperly" target="_blank" rel="noopener noreferrer">Paperly</a><p>Steer a paper plane through mountain valleys, boost through rings and build a flight log across 15 chapters.</p></li>
+      <li data-project="ridgeline"><a href="https://github.com/9harshithp/ridgeline-rally" target="_blank" rel="noopener noreferrer">Ridgeline Rally</a><p>Drive a stunt quad over rolling terrain, collect coins and manage fuel as you chase your best distance.</p></li>
+    </ul>
+  </details>
+</section>
+
+<section class="wrap section" id="skills">
+  <h2>Technical <em>skills.</em></h2>
+  <div class="skill-grid">
+    <article><h3>Languages</h3><div class="tags"><span>Java</span><span>TypeScript</span><span>JavaScript</span><span>Python</span><span>SQL</span></div></article>
+    <article><h3>Frameworks &amp; libraries</h3><div class="tags"><span>Spring Boot</span><span>Node.js</span><span>Express</span><span>React</span><span>Next.js</span><span>FastAPI</span><span>PixiJS</span></div></article>
+    <article><h3>Databases &amp; hosting</h3><div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>TiDB</span><span>AWS</span><span>GCP</span><span>Docker</span><span>Vercel</span><span>Render</span></div></article>
+    <article><h3>Testing &amp; tools</h3><div class="tags"><span>Git</span><span>GitHub Actions</span><span>Playwright</span><span>JUnit</span><span>Vitest</span><span>Sentry</span><span>Gemini API</span><span>Tesseract OCR</span></div></article>
+  </div>
+</section>
+
+<section class="wrap section" id="education">
+  <h2>Education &amp; <em>recognition.</em></h2>
+  <div class="education">
+    <article><small>2022 — 2026 · MYSURU</small><h3>B.E. Computer Science Engineering</h3><p>Vidya Vikas Institute of Engineering and Technology</p><span class="tag">CGPA: 8.2</span></article>
+    <article><small>2019 — 2021 · MANGALURU</small><h3>Pre-University (PCMB)</h3><p>Expert PU College</p><span class="tag">93%</span></article>
+  </div>
+  <div class="achievements">
+    <span>Google Solution Challenge 2025 — FemCare</span>
+    <span>GDG Gen AI Study Jam</span>
+    <span>IBM SkillsBuild — Web Development Fundamentals</span>
+    <span>Mechathon Top 5 — SAE-DTU</span>
+  </div>
+</section>
+
+<section class="wrap section contact" id="contact">
+  <h2>Get in <em>touch.</em></h2>
+  <div class="contact-links">
+    <a class="primary" href="mailto:harshithp914@gmail.com">Send an email</a>
+    <button type="button" class="outline" id="copy">Copy email</button>
+    <a class="outline" href="https://www.linkedin.com/in/harshithp914" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+  <p id="email-status" aria-live="polite">harshithp914@gmail.com</p>
+  <form id="note">
+    <h3>Write to Harshith</h3>
+    <label for="sender-name">Your name<input id="sender-name" name="sender" required autocomplete="name"></label>
+    <label for="sender-message">Message<textarea id="sender-message" name="message" rows="3" required></textarea></label>
+    <button type="submit" class="primary">Open email draft</button>
+  </form>
+</section>
+</main>
+<footer class="wrap">
+  <span>© 2026 Harshith P</span>
+  <a href="#home">Back to top</a>
+</footer>
+
+<dialog id="case" aria-labelledby="case-title">
+  <button type="button" class="close" aria-label="Close case study">×</button>
+  <div id="case-content"></div>
+</dialog>
+</body>
+</html>
