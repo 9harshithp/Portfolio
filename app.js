@@ -41,15 +41,107 @@ function visual(p){
 function render(){
   const list=filtered(),p=list[active];
   $('#count').textContent=String(active+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0');
-  $('#project-stage').innerHTML='<article class="stage"><div class="stage-visual">'+visual(p)+'</div><div class="stage-text"><small>'+p.type+'</small><h3>'+p.name+'</h3><p>'+p.desc+'</p>'+tags(p.tags)+'<div class="stage-links">'+(p.url?'<a href="'+p.url+'" target="_blank" rel="noopener noreferrer">Visit site</a>':'')+'<a href="https://github.com/9harshithp/'+p.repo+'" target="_blank" rel="noopener noreferrer">Source code</a><button type="button" id="details">Case study</button></div></div></article>';
+  $('#project-stage').innerHTML='<article class="stage" data-project-name="'+p.name+'"><div class="stage-visual">'+visual(p)+'</div><div class="stage-text"><small>'+p.type+'</small><h3>'+p.name+'</h3><p>'+p.desc+'</p>'+tags(p.tags)+'<div class="stage-links">'+(p.url?'<a href="'+p.url+'" target="_blank" rel="noopener noreferrer" data-track="demo">Visit site</a>':'')+'<a href="https://github.com/9harshithp/'+p.repo+'" target="_blank" rel="noopener noreferrer" data-track="source">Source code</a><button type="button" id="details" data-track="case">Case study</button></div></div></article>';
   $('#project-grid').innerHTML=list.map((item,i)=>'<button type="button" class="'+(i===active?'current':'')+'" data-index="'+i+'" aria-pressed="'+(i===active)+'"><img loading="lazy" alt="" src="assets/'+item.image+'-600.webp" width="600" height="'+item.h600+'"><small>'+item.type+'</small><strong>'+item.name+'</strong></button>').join('');
   $('#details').onclick=()=>{$('#case-content').innerHTML='<small>ENGINEERING CASE STUDY</small><h2 id="case-title">'+p.name+'</h2><h4>Challenge</h4><p>'+p.challenge+'</p><h4>Implementation</h4><p>'+p.solution+'</p><h4>Outcome</h4><p>'+p.result+'</p>'+tags(p.tags);$('#case').showModal()};
-  $$('#project-grid button').forEach(b=>b.onclick=()=>{active=+b.dataset.index;render()});
+  $$('#project-grid button').forEach(b=>b.onclick=()=>{active=+b.dataset.index;render();trackProjectView(filtered()[active]?.name,'grid')});
 }
-$('#prev').onclick=()=>{active=(active+filtered().length-1)%filtered().length;render()};
-$('#next').onclick=()=>{active=(active+1)%filtered().length;render()};
-$$('.filters button').forEach(b=>b.onclick=()=>{$$('.filters button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');filter=b.dataset.filter;active=0;render()});
+$('#prev').onclick=()=>{active=(active+filtered().length-1)%filtered().length;render();trackProjectView(filtered()[active]?.name,'carousel')};
+$('#next').onclick=()=>{active=(active+1)%filtered().length;render();trackProjectView(filtered()[active]?.name,'carousel')};
+$$('.filters button').forEach(b=>b.onclick=()=>{$$('.filters button').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');filter=b.dataset.filter;active=0;render();trackProjectView(filtered()[active]?.name,'filter')});
+
+// Analytics & consent helpers (GA4 G-NJ0QBENB9W)
+let lastProjectTracked = '';
+function trackEvent(name, params = {}) {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', name, params);
+}
+function trackProjectView(projectName, source) {
+  if (!projectName) return;
+  const key = projectName + '|' + source;
+  if (lastProjectTracked === key) return;
+  lastProjectTracked = key;
+  trackEvent('project_view', { project_name: projectName, source });
+}
+
 render();
+trackProjectView(filtered()[active]?.name, 'initial');
+
+function setAnalyticsConsent(granted) {
+  const value = granted ? 'granted' : 'denied';
+  try { localStorage.setItem('ga_consent', value); } catch {}
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', {
+      analytics_storage: value,
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  }
+  const banner = $('#consent-banner');
+  if (banner) banner.hidden = true;
+  const status = $('#consent-status');
+  if (status) status.textContent = granted ? 'Current preference: Analytics enabled.' : 'Current preference: Analytics disabled.';
+}
+
+(function initConsent() {
+  let saved = null;
+  try { saved = localStorage.getItem('ga_consent'); } catch {}
+  const banner = $('#consent-banner');
+  if (banner && !saved) banner.hidden = false;
+  const status = $('#consent-status');
+  if (status) status.textContent = saved === 'granted' ? 'Current preference: Analytics enabled.' : saved === 'denied' ? 'Current preference: Analytics disabled.' : 'Current preference: Not yet selected (analytics paused by default).';
+  $('#consent-accept')?.addEventListener('click', () => setAnalyticsConsent(true));
+  $('#consent-decline')?.addEventListener('click', () => setAnalyticsConsent(false));
+  $('#privacy-accept')?.addEventListener('click', () => { setAnalyticsConsent(true); $('#privacy-dialog')?.close(); });
+  $('#privacy-decline')?.addEventListener('click', () => { setAnalyticsConsent(false); $('#privacy-dialog')?.close(); });
+  const openPrivacy = () => $('#privacy-dialog')?.showModal();
+  $('#privacy-open')?.addEventListener('click', openPrivacy);
+  $('#consent-privacy')?.addEventListener('click', openPrivacy);
+})();
+
+// Delegated event tracking (single listener prevents duplicate events)
+document.addEventListener('click', event => {
+  const target = event.target.closest('a, button');
+  if (!target) return;
+  const href = target.getAttribute('href') || '';
+  if (href.includes('drive.google.com')) {
+    trackEvent('resume_click', { link_location: 'hero' });
+    return;
+  }
+  if (href === 'https://github.com/9harshithp') {
+    trackEvent('github_click', { link_location: 'socials' });
+    return;
+  }
+  if (href.includes('linkedin.com/in/harshithp914')) {
+    const loc = target.closest('#contact') ? 'contact' : 'socials';
+    trackEvent('linkedin_click', { link_location: loc });
+    return;
+  }
+  if (href.startsWith('mailto:')) {
+    trackEvent('contact_click', { method: 'mailto_link' });
+    return;
+  }
+  if (target.id === 'copy') {
+    trackEvent('email_copy', { method: 'copy_button' });
+    return;
+  }
+  const stageEl = target.closest('#project-stage .stage');
+  if (stageEl) {
+    const projectName = stageEl.dataset.projectName;
+    if (target.dataset.track === 'source') trackEvent('project_source_click', { project_name: projectName, source: 'stage' });
+    else if (target.dataset.track === 'demo') trackEvent('project_demo_click', { project_name: projectName });
+    else if (target.dataset.track === 'case') trackEvent('case_study_open', { project_name: projectName });
+    return;
+  }
+  const dirItem = target.closest('.project-directory [data-project]');
+  if (dirItem && target.tagName === 'A') {
+    trackEvent('project_source_click', { project_name: target.textContent.trim(), source: 'directory' });
+  }
+});
+$('#note')?.addEventListener('submit', () => {
+  trackEvent('contact_click', { method: 'email_draft_form' });
+});
 const accents=[['#b8c5ff','#6c78ff'],['#7ae6d6','#378eaa'],['#f3c878','#cf9259'],['#d7b2ff','#a98af0']];let accent=0;try{accent=Number(localStorage.getItem('accent')||0)%accents.length;document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark'}catch{}
 function color(){document.documentElement.style.setProperty('--accent',accents[accent][0]);document.documentElement.style.setProperty('--accent2',accents[accent][1]);window.dispatchEvent(new Event('themechange'))}color();
 $('#palette').onclick=()=>{accent=(accent+1)%accents.length;color();try{localStorage.setItem('accent',accent)}catch{}};

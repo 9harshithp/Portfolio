@@ -32,3 +32,13 @@
 .project-directory { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.25rem 2rem; list-style: none; padding: 0; }
 .project-directory a { color: var(--accent); text-decoration: underline; }
 .project-directory p { color: var(--muted); line-height: 1.55; margin: .35rem 0 0; }
+.footer-links { display: flex; align-items: center; gap: 20px; }
+.link-btn { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; font-size: inherit; }
+.link-btn:hover { color: var(--accent); }
+.consent-banner { position: fixed; right: 16px; bottom: 16px; z-index: 40; max-width: min(410px, calc(100vw - 32px)); background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; box-shadow: 0 18px 50px #0007; display: grid; gap: 12px; }
+.consent-banner[hidden] { display: none; }
+.consent-banner p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.consent-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.consent-actions button { min-height: 36px; padding: 6px 14px; font-size: 13px; }
+#privacy-dialog .consent-actions { justify-content: flex-start; margin-top: 18px; }
+#privacy-dialog code { font-family: monospace; color: var(--accent); }

@@ -34,6 +34,43 @@
 <meta name="twitter:image" content="https://portfolio-bay-three-10.vercel.app/assets/og-preview.png">
 <meta name="twitter:image:alt" content="Harshith P — Backend Engineer at GammaStack, Full Stack and Game Developer in Mysuru, India">
 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  if (!window.__ga4Initialized) {
+    window.__ga4Initialized = true;
+    var storedConsent = null;
+    try { storedConsent = localStorage.getItem('ga_consent'); } catch (e) {}
+    gtag('consent', 'default', {
+      analytics_storage: storedConsent === 'granted' ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-NJ0QBENB9W', {
+      cookie_domain: location.hostname === 'portfolio-bay-three-10.vercel.app' ? 'portfolio-bay-three-10.vercel.app' : 'auto',
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      anonymize_ip: true
+    });
+    var loadGtag = function() {
+      if (window.__ga4ScriptLoaded) return;
+      window.__ga4ScriptLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-NJ0QBENB9W';
+      document.head.appendChild(s);
+    };
+    if (storedConsent === 'granted') {
+      window.addEventListener('load', loadGtag, { once: true });
+    }
+    ['pointerdown', 'keydown', 'scroll'].forEach(function(evt) {
+      window.addEventListener(evt, loadGtag, { once: true, passive: true });
+    });
+  }
+</script>
+
 <link rel="preload" as="image" href="assets/societycook-600.webp" fetchpriority="high" type="image/webp">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="studio.css">
@@ -464,8 +501,32 @@
 </main>
 <footer class="wrap">
   <span>© 2026 Harshith P</span>
-  <a href="#home">Back to top</a>
+  <div class="footer-links">
+    <button type="button" class="link-btn" id="privacy-open">Analytics &amp; privacy</button>
+    <a href="#home">Back to top</a>
+  </div>
 </footer>
+
+<aside class="consent-banner" id="consent-banner" role="region" aria-label="Analytics consent" hidden>
+  <p>This portfolio uses Google Analytics 4 to understand project views and link clicks. No personal data or form messages are sent. <button type="button" class="link-btn" id="consent-privacy">Privacy info</button></p>
+  <div class="consent-actions">
+    <button type="button" class="outline" id="consent-decline">Decline</button>
+    <button type="button" class="primary" id="consent-accept">Accept</button>
+  </div>
+</aside>
+
+<dialog id="privacy-dialog" aria-labelledby="privacy-title">
+  <button type="button" class="close" aria-label="Close privacy information">×</button>
+  <small>PRIVACY &amp; ANALYTICS</small>
+  <h2 id="privacy-title">Analytics preferences</h2>
+  <p>This site uses Google Analytics 4 (<code>G-NJ0QBENB9W</code>) with IP anonymization and ad signals disabled to measure aggregated page views, project views, and outbound link clicks.</p>
+  <p>Contact form inputs (name and message) and email addresses are never sent to Google Analytics.</p>
+  <p id="consent-status" aria-live="polite"></p>
+  <div class="consent-actions">
+    <button type="button" class="outline" id="privacy-decline">Disable analytics</button>
+    <button type="button" class="primary" id="privacy-accept">Enable analytics</button>
+  </div>
+</dialog>
 
 <dialog id="case" aria-labelledby="case-title">
   <button type="button" class="close" aria-label="Close case study">×</button>
